@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Destinations" %>
+
+<h1>Destinations</h1>
+
+<div id="destinations">
+  <% @destinations.each do |destination| %>
+    <%= render destination %>
+    <p>
+      <%= link_to "Show this destination", destination %>
+    </p>
+  <% end %>
+</div>
+<% if user_signed_in? && current_user.role == 'admin' %>
+  <%= link_to "New destination", new_destination_path %>
+<% end %>
