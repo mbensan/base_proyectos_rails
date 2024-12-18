@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Para usar
 
-Things you may want to cover:
+1. Posicionese en la carpeta donde desee dejar el proyecto, y ejecute:
 
-* Ruby version
+`git clone https://github.com/mbensan/base_proyectos_rails nombre_nuevo_proyecto`
 
-* System dependencies
+1.5. Borre el repositorio remoto
+`git remote rm origin`
 
-* Configuration
+2. Modifique la migración del usuario DEVISE
 
-* Database creation
+3. Mofique formulario de registro de personas
 
-* Database initialization
+4. Mofique controlador ppal de la aplicación
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
