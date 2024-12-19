@@ -9,7 +9,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
+
         <% if user_signed_in? %>
+          <% if current_user.role == 'admin' %>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/administration">Administrador</a>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= button_to 'Cerrar sesión', destroy_user_session_path, class:'nav-link', method: :delete %>
           </li>

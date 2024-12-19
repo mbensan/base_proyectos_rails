@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "pages/home"
+  get "pages/adminnistration"
   resources :destinations
   get "main/index"
   devise_for :users
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  get "administration" => "main#administration"
    # Defines the root path route ("/")
    root "main#index"
 end
