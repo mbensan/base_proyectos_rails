@@ -1,0 +1,42 @@
+<%= form_with(model: package) do |form| %>  
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :duration, style: "display: block" %>
+    <%= form.number_field :duration %>
+  </div>
+
+  <div>
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, style: "display: block" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <label for="">Selecciona un Destino</label>
+    <select name="destination_id" id="">
+      <% @destinations.each do |dest| %>
+        <option value="<%= dest.id %>">
+          <%= dest.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

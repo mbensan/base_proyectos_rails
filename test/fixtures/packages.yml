@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 1
+  duration: 1
+  start_date: 2024-12-18
+  end_date: 2024-12-18
+  destination: one
+
+two:
+  name: MyString
+  price: 1
+  duration: 1
+  start_date: 2024-12-18
+  end_date: 2024-12-18
+  destination: two
