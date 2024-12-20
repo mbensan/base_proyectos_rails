@@ -1,33 +1,35 @@
-<%= form_with(model: package) do |form| %>  
+<form action="/packages" method="post">
+  <!-- Include the CSRF token for security -->
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <label for="package_name" style="display: block">Name</label>
+    <input type="text" id="package_name" name="package[name]" value="">
   </div>
 
   <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
+    <label for="package_price" style="display: block">Price</label>
+    <input type="number" id="package_price" name="package[price]" value="">
   </div>
 
   <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.number_field :duration %>
+    <label for="package_duration" style="display: block">Duration</label>
+    <input type="number" id="package_duration" name="package[duration]" value="">
   </div>
 
   <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.date_field :start_date %>
+    <label for="package_start_date" style="display: block">Start Date</label>
+    <input type="date" id="package_start_date" name="package[start_date]" value="">
   </div>
 
   <div>
-    <%= form.label :end_date, style: "display: block" %>
-    <%= form.date_field :end_date %>
+    <label for="package_end_date" style="display: block">End Date</label>
+    <input type="date" id="package_end_date" name="package[end_date]" value="">
   </div>
 
   <div>
-    <label for="">Selecciona un Destino</label>
-    <select name="destination_id" id="">
+    <label for="destination_id">Selecciona un Destino</label>
+    <select name="destination_id" id="destination_id">
       <% @destinations.each do |dest| %>
         <option value="<%= dest.id %>">
           <%= dest.name %>
@@ -36,7 +38,20 @@
     </select>
   </div>
 
+  <h4>Aguegue al menos 3 actividades</h4>
+  <ul>
+    <li>
+      <b>Actividad 1:</b> <input type="text" required name="act1">
+    </li>
+    <li>
+      <b>Actividad 2:</b> <input type="text" required name="act2">
+    </li>
+    <li>
+      <b>Actividad 3:</b> <input type="text" required name="act3">
+    </li>
+  </ul>
+
   <div>
-    <%= form.submit %>
+    <input type="submit" value="Create Package">
   </div>
-<% end %>
+</form>

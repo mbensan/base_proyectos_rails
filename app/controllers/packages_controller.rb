@@ -25,7 +25,13 @@ class PackagesController < ApplicationController
   def create
     @package = Package.new(package_params)
     destination_id = params[:destination_id]
-    @package.destination_id = destination_id
+    destination = Destination.find(destination_id)
+    @package.destination = destination
+    @package.save
+    # add activities
+    @package.add_activity(params[:act1])
+    @package.add_activity(params[:act2])
+    @package.add_activity(params[:act3])
 
     respond_to do |format|
       if @package.save
