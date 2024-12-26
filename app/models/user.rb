@@ -10,8 +10,6 @@ class User < ApplicationRecord
   def only_one_admin
     if User.count == 0
       self.role = 'admin'
-      self.position = 'Manager'
-      self.specialization = 'Markenting Management'
     end
   end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :models
   resources :packages
   get "pages/home"
   get "pages/adminnistration"
